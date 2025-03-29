@@ -56,10 +56,11 @@ struct ContentView: View {
             .padding()
         } //VStack
         .onAppear {
-            let data: [String: Any] = FormatDate().formatDateLocally(date: date_now, timestamp: example_timestamp)
-            date_only = data["date_only"] as! String
-            time_only = data["time_only"] as! String
-            date_time = data["date_time"] as! String
+            let fd = FormatDate()
+            let results: [String: Any] = fd.formatDateLocally(date: date_now, timestamp: example_timestamp)
+            date_only = results["date_only"] as! String
+            time_only = results["time_only"] as! String
+            date_time = results["date_time"] as! String
         }
     }
 }

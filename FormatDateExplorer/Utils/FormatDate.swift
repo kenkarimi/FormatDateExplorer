@@ -36,7 +36,7 @@ struct FormatDate {
     
     func formatDateLocally(date: Date, timestamp: Int64) -> [String: Any] {
         /**
-         * timeIntervalSince1970 takes a TimeInterval() which is a Double as input. Since timestamp is of type Int64, it is implicitly converted by TimeInterval into a Double.
+         * timeIntervalSince1970 takes a TimeInterval() which is a Double. Since timestamp is of type Int64, it is implicitly converted by TimeInterval into a Double.
          */
         let date_from_stamp: Date = Date(timeIntervalSince1970: TimeInterval(timestamp))
         
@@ -44,7 +44,7 @@ struct FormatDate {
         //let date_only: String = customDateOnlyFormatter.string(from: date)
         //let time_only: String = customTimeOnlyFormatter.string(from: date)
         
-        //formatting timestamp converted into a date
+        //formatting timestamp that's been converted into a date
         let date_only: String = customDateOnlyFormatter.string(from: date_from_stamp)
         let time_only: String = customTimeOnlyFormatter.string(from: date_from_stamp)
         
@@ -53,12 +53,5 @@ struct FormatDate {
         let results: [String: Any] = ["date_only": date_only, "time_only": time_only, "date_time": date_time]
         
         return results
-    }
-}
-
-extension Date {
-    
-    var date_time: String {
-        return "nothing"
     }
 }
