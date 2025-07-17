@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     
     @State private var date_now = Date.now
-    @State private var example_timestamp: Int64 = 1678886400
+    @State private var example_timestamp: Int64 = 1678886400 //A unix timestamp(seconds since 1970 NOT milliseconds) of 10 digits.
     @State private var date_only: String = ""
     @State private var time_only: String = ""
     @State private var date_time: String = ""

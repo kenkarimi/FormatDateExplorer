@@ -37,6 +37,7 @@ struct FormatDate {
     func formatDateLocally(date: Date, timestamp: Int64) -> [String: Any] {
         /**
          * timeIntervalSince1970 takes a TimeInterval() which is a Double. Since timestamp is of type Int64, it is implicitly converted by TimeInterval into a Double.
+         * timeIntervalSince1970 expects a unix timestamp(seconds since 1970 NOT milliseconds) of 10 digits. If your timestamp is milliseconds since 1970(13 digits), then you have to convert it to seconds by dividing by 1000 like so:  = Date(timeIntervalSince1970: TimeInterval(timestamp) / 1000)
          */
         let date_from_stamp: Date = Date(timeIntervalSince1970: TimeInterval(timestamp))
         
